@@ -13,12 +13,12 @@ class CreateSkripsiTable extends Migration
      */
     public function up()
     {
-        Schema::create('_skripsi', function (Blueprint $table) {
+        Schema::create('skripsi', function (Blueprint $table) {
             $table->string('id',12)->primary();
-            $table->string('nim', 15);
-            $table->string('nama_mahasiswa', 40);
+            $table->string('nim', 100);
+            $table->string('nama_mahasiswa', 10);
             $table->text('judul');
-            $table->string('tempat_penelitian', 55);
+            $table->string('tempat_penelitian', 12);
             $table->text('alamat');
             $table->timestamps();
         });
@@ -31,6 +31,6 @@ class CreateSkripsiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_skripsi');
+        Schema::dropIfExists('skripsi');
     }
 }
